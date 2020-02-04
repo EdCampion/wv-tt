@@ -1,0 +1,18 @@
+<div
+    class="container"
+> 
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Pixabay Image Gallery</h1>
+      <p class="lead">For a detailed view of any image, please click on it</p>
+    </div>
+  </div>
+<div class="card-columns" infinite-scroll
+    [infiniteScrollDistance]="2"
+    [infiniteScrollThrottle]="150"
+    (scrolled)="onScrollDown()">
+            <div *ngFor="let image of gridImages" class="card" routerLink="/image/{{image.id}}">
+                <img class="card-img-top img-fluid" src="{{image.webformatURL}}" alt="Card image top">
+            </div>
+    </div> 
+</div>
