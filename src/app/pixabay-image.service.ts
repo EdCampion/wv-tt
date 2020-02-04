@@ -18,18 +18,18 @@ export class PixabayImageService implements ImageService {
     );
   }
   
-  getImageDetail(id: string): Observable<ImageAPIResponse> {
+  getImageDetail(id: number): Observable<ImageAPIResponse> {
     return this.getImageDetailAPI(id).pipe(
       map(pixaRes => this.processPixaBayResponse(pixaRes))
     );
   }
 
   getImagesAPI(page: number): Observable<PixaBayResponse> {
-    const IMAGES_URL = `${this.API_ROOT}?key=${this.API_KEY}&page=${page}&per_page=40&category=animals`;
+    const IMAGES_URL = `${this.API_ROOT}?key=${this.API_KEY}&page=${page}&category=animals`;
     return this.http.get<PixaBayResponse>(IMAGES_URL);
   }
 
-  getImageDetailAPI(id: string): Observable<PixaBayResponse> {
+  getImageDetailAPI(id: number): Observable<PixaBayResponse> {
     const IMAGE_DETAIL_URL = `${this.API_ROOT}?key=${this.API_KEY}&id=${id}`;
     return this.http.get<PixaBayResponse>(IMAGE_DETAIL_URL);
   }
@@ -37,6 +37,7 @@ export class PixabayImageService implements ImageService {
   processPixaBayResponse(pixa: PixaBayResponse): ImageAPIResponse {
     var resp = {} as ImageAPIResponse;
     resp.totalHits = pixa.totalHits;
+    resp.total = pixa.total;
     resp.hits = pixa.hits as Array<GalleryImage>;
     return resp;
   }

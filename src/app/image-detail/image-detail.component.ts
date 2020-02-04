@@ -24,8 +24,9 @@ export class ImageDetailComponent implements OnInit {
   }
 
   getImage() {
-    const id = this.route.snapshot.paramMap.get('id') || '';
-    this.imgSrv.getImageDetail(id)
+    const idParam = this.route.snapshot.paramMap.get('id')|| '';
+    if(idParam) {
+    this.imgSrv.getImageDetail(+idParam)
       .subscribe(imageRes  => {
         if(imageRes.totalHits > 0) {
           this.image = imageRes.hits[0]
@@ -34,5 +35,6 @@ export class ImageDetailComponent implements OnInit {
           console.log("No image");
         }
       } );
+    }
   }
 }

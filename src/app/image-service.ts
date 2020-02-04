@@ -5,5 +5,5 @@ import { Observable } from 'rxjs';
 @Injectable()
 export abstract class ImageService {
   abstract getImages(page:number): Observable<ImageAPIResponse>;
-  abstract getImageDetail(id:string): Observable<ImageAPIResponse>;
+  abstract getImageDetail(id:number): Observable<ImageAPIResponse>;
 }

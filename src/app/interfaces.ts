@@ -4,9 +4,9 @@ export interface PixaBayImage {
   webformatWidth: number;
   likes: number;
   imageWidth: number;
-  id: string;
-  user_id: string;
-  imageURL: string;
+  id: number;
+  user_id: number;
+  imageURL?: string;
   views: number;
   comments: number;
   pageURL: string;
@@ -19,11 +19,11 @@ export interface PixaBayImage {
   downloads: number;
   user: string;
   favorites: number;
-  vectorURL: string;
+  vectorURL?: string;
   imageSize: number;
   previewWidth: number;
   userImageURL: string;
-  fullHDURL: string;
+  fullHDURL?: string;
   previewURL: string;
 }
 
@@ -34,7 +34,7 @@ export interface PixaBayResponse {
 }
 
 export interface GalleryImage {
-  id: string;
+  id: number;
   webformatURL:string;
   largeImageURL:string;
   user:string;
