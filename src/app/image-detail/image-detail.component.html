@@ -6,8 +6,7 @@
             </div>
         </div>
     <div class = row *ngIf = "image">
-        <div class = "col-md-12" >
-            <!-- <img src = "{{image.largeImageURL}}" class = "img-fluid"> -->
+        <div class = "col-12" >
             <div  class="card">
                 <img class="card-img-top img-fluid" src="{{image.largeImageURL}}" alt="Card image top">
                 <div class="card-body">
@@ -15,7 +14,7 @@
                     <ul >
                         <li>User: {{image.user}}
                         <li>Downloads: {{image.downloads}}</li>
-                        <li>Size: {{image.imageSize}}</li>
+                        <li>Size: {{image.imageSize | filesize}} </li>
                         <li>Tags: {{image.tags}}</li>
                     </ul>
             </div>

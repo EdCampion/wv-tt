@@ -1,3 +1,9 @@
+/**
+ *
+ * Represents a Pixabay image result
+ * @export
+ * @interface PixaBayImage
+ */
 export interface PixaBayImage {
   largeImageURL: string;
   webformatHeight: number;
@@ -26,13 +32,23 @@ export interface PixaBayImage {
   fullHDURL?: string;
   previewURL: string;
 }
-
+/**
+ * Represents a full response from the pixabay api
+ *
+ * @export
+ * @interface PixaBayResponse
+ */
 export interface PixaBayResponse {
   total: number;
   totalHits: number;
   hits: Array<PixaBayImage>;
 }
-
+/**
+ * Represents a generic image result from any image api.
+ *
+ * @export
+ * @interface GalleryImage
+ */
 export interface GalleryImage {
   id: number;
   webformatURL:string;
@@ -42,7 +58,12 @@ export interface GalleryImage {
   downloads:number;
   imageSize:number;
 }
-
+/**
+ *Represents a generic response from any image api.
+ *
+ * @export
+ * @interface ImageAPIResponse
+ */
 export interface ImageAPIResponse {
   total: number;
   totalHits: number;

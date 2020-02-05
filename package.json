@@ -22,6 +22,8 @@
     "@ngrx/store": "^8.6.0",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
+    "ng-lazyload-image": "^7.0.1",
+    "ngx-filesize": "^2.0.2",
     "ngx-infinite-scroll": "^8.0.1",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",

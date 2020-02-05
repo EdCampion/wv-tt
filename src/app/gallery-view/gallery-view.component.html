@@ -11,8 +11,9 @@
     [infiniteScrollDistance]="2"
     [infiniteScrollThrottle]="150"
     (scrolled)="onScrollDown()">
-            <div *ngFor="let image of gridImages" class="card" routerLink="/image/{{image.id}}">
-                <img class="card-img-top img-fluid" src="{{image.webformatURL}}" alt="Card image top">
+            <div *ngFor="let image of gridImages" class="card" >
+                <a class = "card-link" routerLink="/image/{{image.id}}"></a>
+                <img class="card-img-top img-fluid" [useSrcset]="true" [lazyLoad]="image.webformatURL" alt="Card image top">
             </div>
     </div> 
 </div>

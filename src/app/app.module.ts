@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GalleryViewComponent } from './gallery-view/gallery-view.component';
@@ -9,6 +10,7 @@ import { ImageDetailComponent } from './image-detail/image-detail.component';
 import { HttpErrorInterceptor } from './http-error.interceptor';
 import { AppHeaderComponent } from './app-header/app-header.component';
 import { AppFooterComponent } from './app-footer/app-footer.component';
+import {NgxFilesizeModule} from 'ngx-filesize';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +23,9 @@ import { AppFooterComponent } from './app-footer/app-footer.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    LazyLoadImageModule,
+    NgxFilesizeModule,
   ],
   providers: [
     {

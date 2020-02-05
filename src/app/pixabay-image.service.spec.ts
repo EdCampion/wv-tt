@@ -65,13 +65,14 @@ describe('PixabayImageService', () => {
   })
   describe('#getImageDetail', () => {
     it('should return a Observable<ImageAPIResponse> by image id', () => {
+      const id = 4792149
       const mockResponse: ImageAPIResponse = { 
         totalHits:1,
         total:1,
         hits:[ 
            { 
               largeImageURL: 'https://pixabay.com/get/52e7dc414b56a514ea898279c02b327f1422dfe05b51764f752d79d2_1280.jpg',
-              id:4792149,
+              id:id,
               webformatURL:'https://pixabay.com/get/52e7dc414b56a514ea898279c02b327f1422dfe05b51764f752d79d2_640.jpg',
               tags:'blue tit, tit, songbird',
               downloads:1177,
@@ -81,9 +82,9 @@ describe('PixabayImageService', () => {
          ]
        };
 
-      const id = 4792149
       service.getImageDetail(id).subscribe(imgRes => {
         expect(imgRes.hits.length).toBe(1);
+        expect(imgRes.hits[0].id).toBe(id);
         expect(imgRes).toEqual(mockResponse);
       });
   
