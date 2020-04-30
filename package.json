@@ -21,7 +21,7 @@
     "@angular/router": "~8.2.14",
     "@ngrx/store": "^8.6.0",
     "bootstrap": "^4.4.1",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "ng-lazyload-image": "^7.0.1",
     "ngx-filesize": "^2.0.2",
     "ngx-infinite-scroll": "^8.0.1",
